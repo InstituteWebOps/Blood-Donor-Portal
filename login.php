@@ -2,7 +2,8 @@
 <body>
 <h1  align="center"> Welcome!Please enter your login Credentials.</h1>
 
-<form action="connection1.php" method="post" name="signupform">
+<!--<form action="connection1.php" method="post" name="signupform">-->
+<form action="details.php" method="post" name="signupform">
 <table width="274" border="0" align="center" cellpadding="2" cellspacing="0">
 <tr>
     <td width="95"><div align="right"> username:</div></td>

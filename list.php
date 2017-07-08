@@ -12,22 +12,7 @@
     }
 </style>    
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "12017";
-
-try {
-    //make a connection
-    $conn = new PDO("mysql:host=$servername;dbname=donors", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-}
-catch(PDOException $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
-    }
-
+require('db.php');
 //selecting and displaying data in a table
 
 $query = $conn->query('SELECT * FROM donors');
@@ -39,6 +24,7 @@ $query = $conn->query('SELECT * FROM donors');
     echo '<th> Whatsapp Number </th>';
     echo '<th> Blood Group </th>';
     echo '<th> Age </th>';
+    echo '<th> Last Date Of Donation </th>';
     echo '<th> Medical History </th>';
     echo '</tr>';
     while($row = $query->fetch()) {
@@ -61,6 +47,9 @@ $query = $conn->query('SELECT * FROM donors');
         echo '</td>';
         echo '<td>';
         echo $row['age'];
+        echo '</td>';
+        echo '<td>';
+        echo $row['lastdonated'];
         echo '</td>';
         echo '<td>';
         echo $row['mhistory'];
