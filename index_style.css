@@ -1,7 +1,7 @@
 body {
     /*position: relative;*/
     /*margin: 0;*/
-    padding-top: 5%;
+    /*padding-top: 5%;*/
     background-color: #edd0d0;
     opacity: 1;
 }
@@ -107,4 +107,46 @@ button>a:visited,
 button>a:hover {
     color: #333;
     text-decoration: none;
+}
+
+.blockquote {
+    border-radius: 20px;
+    /*display: block;*/
+    background: #fff;
+    padding: 15px 20px 15px 20px!important;
+    position: relative;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #666;
+    -moz-box-shadow: 2px 2px 15px #ccc;
+    -webkit-box-shadow: 2px 2px 15px #ccc;
+    box-shadow: 2px 2px 15px #ccc;
+    text-align: center;
+    /*padding: 1.5% 0 2% 0;*/
+    margin: 1% 18%;
+}
+
+.blockquote::before {
+    content: "\201C";
+    /*Unicode for Left Double Quote*/
+    font-family: Georgia, serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: #999;
+    position: absolute;
+    left: 5px;
+    top: -3px;
+}
+
+.blockquote::after {
+    content: "\201D";
+    font-family: Georgia, serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: #999;
+    position: absolute;
+    right: 10px;
+    top: 5px;
 }
