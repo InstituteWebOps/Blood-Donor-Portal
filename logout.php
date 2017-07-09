@@ -2,6 +2,6 @@
    session_start();
    
    if(session_destroy()) {
-      header("Location: login.php");  //redirecting to login page upon logout
+      header("Location: index.html");  //redirecting to login page upon logout
    }
 ?>
