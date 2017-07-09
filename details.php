@@ -9,8 +9,6 @@
     // $_SESSION['rollno']=(isset($_SESSION['rollno'])?$_SESSION['rollno']:"AE15B001");
     if(!isset($_SESSION['rollno'])) header("Location: login.php"); 
     require('db.php');
-    print_r($_POST);
-    print_r($_SESSION);
     try{
         // Fetch record
         $statement = "SELECT * FROM donors WHERE rollno = '".$_SESSION['rollno']."';"; 
@@ -121,8 +119,8 @@
         <div class="form-group">
             <label class="control-label col-sm-4" for="gender">Gender:</label>
             <div class="col-sm-8">
-                <input type="radio" name="gender" value="male" <?php echo ($row[ 'gender']=='male' ? ' checked': '');?>>Male
-                <input type="radio" name="gender" value="female" <?php echo ($row[ 'gender']=='female' ? ' checked': '');?>>Female
+                <input type="radio" name="gender" value="male" <?php echo ($row['gender']=='male' ? ' checked': ($row['gender']==''?'checked':''));?>>Male
+                <input type="radio" name="gender" value="female" <?php echo ($row['gender']=='female' ? ' checked': '');?>>Female
             </div>
         </div>
         <div class="form-group">
@@ -169,7 +167,7 @@
         <div class="form-group">
             <label class="control-label col-sm-4" for="mhistory">Medical History, if any:</label>
             <div class="col-sm-8">
-                <textarea id="mhistory" class="form-control" name="mhistory" rows="3" width="100%" value="<?php echo $row['mhistory'];?>" placeholder="Enter comments about any previous medical history"></textarea>
+                <textarea id="mhistory" class="form-control" name="mhistory" rows="3" width="100%" placeholder="Enter comments about any previous medical history"><?php echo $row['mhistory'];?></textarea>
             </div>
         </div>
         <div class="form-group">

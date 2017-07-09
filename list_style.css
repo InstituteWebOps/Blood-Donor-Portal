@@ -1,0 +1,46 @@
+    .container {
+        /*background-color: #3e94ec;*/
+        background-color: rgba(249, 239, 239, 0.7);
+        font-family: "Roboto", helvetica, arial, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        text-rendering: optimizeLegibility;
+    }
+    
+    .table {}
+    
+    .thead {
+        background-color: #ba0e0e;
+        color: #eee;
+        font-size: 125%;
+        /*width: 100%;*/
+        padding: 5px 1px;
+        text-align: center;
+        vertical-align: middle;
+        margin-top: 5%;
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .trow {
+        background-color: #f2c3c1;
+        margin-bottom: 5px;
+        padding: 10px 0;
+    }
+    
+    .thead,
+    .trow {
+        text-align: center;
+        vertical-align: middle;
+        transition: all 1.2s ease-out;
+    }
+    
+    .trow:hover {
+        background-color: #ef9c99;
+        transition: all 0.26s ease-in;
+    }
+    
+    .th,
+    .td {
+        text-align: center;
+        vertical-align: middle;
+    }
