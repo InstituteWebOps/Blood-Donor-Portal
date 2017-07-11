@@ -15,10 +15,11 @@
         font-size: 120%;
         /*width: 100%;*/
         padding: 5px 1px;
-        text-align: center;
+ @       text-align: center;
         margin-top: 0%;
         vertical-align: middle;
         border-radius: 10px 10px 0 0;
+        position: fixed;
         /*top: 0;*/
         /*left: 0;*/
         z-index: 999;
@@ -29,7 +30,7 @@
         background-color: #f2c3c1;
         margin-bottom: 5px;
         padding: 10px 0;
-        /*width: 101.7%*/;
+        /*width: 100%;*/
     }
     
     .thead,
@@ -48,14 +49,12 @@
     .td {
         text-align: center;
         vertical-align: middle;
-	waord-wrap: break-word;
     }
     
     @media screen and (max-width: 992px) {
         .height {
             height: 42%;
         }
-	
     }
     
     @media screen and (min-width: 993px) {

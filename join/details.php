@@ -5,10 +5,12 @@
     <title>User profile - Blood Donor Portal</title>
     <?php 
     session_start();
+//    print_r($_SESSION);
     // To be safe
     // $_SESSION['rollno']=(isset($_SESSION['rollno'])?$_SESSION['rollno']:"AE15B001");
-    if(!isset($_SESSION['rollno'])) header("Location: login.php"); 
-    require('db.php');
+    if(!isset($_SESSION['rollno'])) header("Location: index.php"); 
+    require('../config/db.php');
+
     try{
         // Fetch record
         $statement = "SELECT * FROM donors WHERE rollno = '".$_SESSION['rollno']."';"; 
@@ -89,6 +91,7 @@
             border-radius: 5px;
             background-color: #d0edd0;
         }
+
     </style>
 </head>
 
@@ -159,7 +162,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-sm-4" for="lastdonated">Date of Last Blood Donation:<br><small class="text-muted">(Put 'Never' if you have never donated before)</small></label>
+            <label class="control-label col-sm-4" for="lastdonated">Date of Last Blood Donation:<br><small class="text-muted">(Leave Empty if you have ever donated before)</small></label>
             <div class="col-sm-8">
                 <input type="date" class="form-control" id="lastdonated" name="lastdonated" value="<?php echo $row['lastdonated'];?>">
             </div>

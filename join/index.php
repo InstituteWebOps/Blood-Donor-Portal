@@ -61,9 +61,11 @@ if(!isset($_GET['url'])) $_GET['url']="";
 $url  = rtrim($_GET['url'],'/');
 $url = explode('/', $url);
 if($url[0]==''){
-  $url[0]='index';
+  $url[0]='details';
 }
-
+$_SESSION['rollno'] = $_SESSION['username'];
+//print_r($_SESSION);
+header("location: details.php");
 // require('pages/'.$url[0].'.php');
-require($url[0].'.php');
+//require($url[0].'.php');
 }
