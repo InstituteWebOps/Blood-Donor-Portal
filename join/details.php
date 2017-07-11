@@ -23,10 +23,10 @@
         if(empty($row))
         {
           // New insert if no previous record
-          $statement = "INSERT INTO donors (rollno, name, gender, email, phoneno, whatsappno, bgroup, age, lastdonated, mhistory) VALUES (:rollno, :name, :gender, :email, :phoneno, :whatsappno, :bgroup, :age, :lastdonated, :mhistory);";
+          $statement = "INSERT INTO donors (rollno, name, gender, email, phoneno, whatsappno, bgroup, b_month, b_year, lastdonated, mhistory) VALUES (:rollno, :name, :gender, :email, :phoneno, :whatsappno, :bgroup, :b_month, :b_year, :lastdonated, :mhistory);";
         } else {
           // Update record if already exists
-          $statement = "UPDATE donors SET name = :name, gender = :gender, email = :email, phoneno = :phoneno, whatsappno = :whatsappno, bgroup = :bgroup, age = :age, lastdonated = :lastdonated, mhistory = :mhistory WHERE  rollno = :rollno;";
+          $statement = "UPDATE donors SET name = :name, gender = :gender, email = :email, phoneno = :phoneno, whatsappno = :whatsappno, bgroup = :bgroup, b_month = :b_month, b_year = :b_year, lastdonated = :lastdonated, mhistory = :mhistory WHERE  rollno = :rollno;";
         }
         // Insert into db
         $name = $_POST['name'];
@@ -35,7 +35,8 @@
         $phoneno = $_POST['phoneno'];
         $whatsappno = $_POST['whatsappno'];
         $bgroup = $_POST['bgroup'];
-        $age = $_POST['age'];
+        $b_month = $_POST['b_month'];
+        $b_year = $_POST['b_year'];
         $lastdonated = $_POST['lastdonated'];
         $mhistory = $_POST['mhistory'];
         
@@ -47,7 +48,8 @@
         $insert->bindValue(':phoneno' , $phoneno);
         $insert->bindValue(':whatsappno' , $whatsappno);
         $insert->bindValue(':bgroup' , $bgroup);
-        $insert->bindValue(':age' , $age);
+        $insert->bindValue(':b_month' , $b_month);
+        $insert->bindValue(':b_year' , $b_year);
         $insert->bindValue(':lastdonated' , $lastdonated);
         $insert->bindValue(':mhistory' , $mhistory);
         $insert->execute();
@@ -67,7 +69,8 @@
         $row['phoneno']="";
         $row['whatsappno']="";
         $row['bgroup']="";
-        $row['age']="";
+        $row['b_month']="";
+        $row['b_year']="";
         $row['lastdonated']="";
         $row['mhistory']="";
       }
@@ -157,8 +160,12 @@
 
         <div class="form-group">
             <label class="control-label col-sm-4" for="age">Age:</label>
-            <div class="col-sm-8">
-                <input type="number" class="form-control" id="age" name="age" placeholder="Enter age" name="age" min="18" max="60" value="<?php echo $row['age'];?>" requireda>
+            <div class="col-sm-4">
+                <input type="number" class="form-control" id="b_month" name="b_month" placeholder="Enter Birth Month" name="b_month" min="1" max="12" value="<?php echo $row['b_month'];?>" requireda>
+            </div>
+            <!-- <label class="control-label col-sm-2" for="age">Age:</label> -->
+            <div class="col-sm-4">
+                <input type="number" class="form-control" id="b_year" name="b_year" placeholder="Enter Year of Birth" name="b_year" min="1970" max="2000" value="<?php echo $row['b_year'];?>" requireda>
             </div>
         </div>
         <div class="form-group">

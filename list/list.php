@@ -60,7 +60,7 @@ $query = $conn->query('SELECT * FROM donors ORDER BY '.(isset($_GET['sortby'])?$
         <div class=\"col-xs-2 td text-right\">".$row['phoneno']."</div>
         <div class=\"col-xs-1 td text-center\">".$row['whatsappno']."</div>
         <div class=\"col-xs-1 td text-right\">".$row['bgroup']."</div>
-        <div class=\"col-xs-1 td text-center\">".$row['age']."</div>
+        <div class=\"col-xs-1 td text-center\">".((date('Y')-$row['b_year'])+floor((1/12)*(date('m')-$row['b_month'])))."</div>
         <div class=\"col-xs-2 td text-center\">".($row['lastdonated']==""?"Never Donated Before":$row['lastdonated'])."</div>
         <div class=\"col-xs-2 td text-center\">".$row['mhistory']."</div>
     </div>";}
