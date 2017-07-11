@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>User profile</title>
+    <title>User profile - Blood Donor Portal</title>
     <?php 
     session_start();
     // To be safe
@@ -132,7 +132,7 @@
         <div class="form-group">
             <label class="control-label col-sm-4" for="whatsappno">WhatsApp Number:</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="whatsappno" placeholder="Enter Phone Number" name="whatsappno" value="<?php echo $row['whatsappno'];?>" min="10">
+                <input type="text" class="form-control" id="whatsappno" placeholder="Enter WhatsApp Number" name="whatsappno" value="<?php echo $row['whatsappno'];?>" min="10">
             </div>
         </div>
 
@@ -159,9 +159,9 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-sm-4" for="lastdonated">Date of Last Blood Donation:</label>
+            <label class="control-label col-sm-4" for="lastdonated">Date of Last Blood Donation:<br><small class="text-muted">(Put 'Never' if you have never donated before)</small></label>
             <div class="col-sm-8">
-                <input type="date" class="form-control" id="lastdonated" placeholder="Leave Empty if not donated before" name="lastdonated" value="<?php echo $row['lastdonated'];?>">
+                <input type="date" class="form-control" id="lastdonated" name="lastdonated" value="<?php echo $row['lastdonated'];?>">
             </div>
         </div>
         <div class="form-group">
