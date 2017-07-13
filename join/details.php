@@ -185,7 +185,7 @@
                 <button type="submit" class="btn btn-primary center-block btn-block">Submit Details</button>
             </div>
             <div class="col-sm-4">
-                <a class="btn btn-info center-block btn-block" href="logout.php">Logout</a>
+                <a class="btn btn-info center-block btn-block" href="../logout.php">Logout</a>
             </div>
             <div class="col-sm-2"></div>
         </div>

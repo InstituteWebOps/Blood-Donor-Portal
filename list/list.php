@@ -2,6 +2,11 @@
 
 <head>
     <title>List of Donors - Blood Donor Portal</title>
+    <?php 
+    session_start();
+    // $_SESSION['rollno']=(isset($_SESSION['rollno'])?$_SESSION['rollno']:"AE15B001");
+    if(!isset($_SESSION['rollno'])) header("Location: index.php"); 
+    ?>
     <!--meta name="viewport" content="width=device-width, initial-scale=1"-->
     <link rel="stylesheet" href="list_style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -9,7 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <style>
-        a,
+    a,
     a:hover,
     a:visited,
     a:active {
@@ -17,20 +22,28 @@
         color: #eee;
     }
 
-        body {
-               /*background-color: #3e94ec;*/
+    body {
+        /*background-color: #3e94ec;*/
         background-color: rgba(249, 239, 239, 0.7);
         font-family: "Roboto", helvetica, arial, sans-serif;
         font-size: 16px;
         font-weight: 400;
         text-rendering: optimizeLegibility;
-	overflow-x: hidden;
+        overflow-x: hidden;
     }
 </style>
 
 <body>
-    <h3 class="text-center">List of Donors <br><button class="text-center btn btn-small" onclick="window.location='/savealife/'"><span class="glyphicon 
-glyphicon-home"></span> Back to Main Page</button></h3>
+    <h3 class="text-center">List of Donors <br>
+    <div class="btn-group">
+        <button class="text-center btn btn-small btn-info" onclick="window.location='/savealife/'">
+            <span class="glyphicon glyphicon-home"></span> Back to Home
+        </button>
+        <button class="text-center btn btn-small btn-warning" onclick="window.location='/../logout.php/'">
+            <span class="glyphicon glyphicon-log-out"></span> Log Out
+        </button>
+    </div>
+    </h3>
     <div class="table">
         <div class=" text-center row thead">
             <div class="col-xs-1 th text-center">
@@ -42,7 +55,7 @@ glyphicon-home"></span> Back to Main Page</button></h3>
             <div class="col-xs-1 th text-right">
                 <a href="list.php?sortby=bgroup">Blood Grp<small><span class="glyphicon glyphicon-eject"></span></small></a></div>
             <div class="col-xs-1 th text-center">
-                <a href="list.php?sortby=age">Age<small><span class="glyphicon glyphicon-eject"></span></small></a></div>
+                <a href="list.php?sortby=b_year">Age<small><span class="glyphicon glyphicon-eject"></span></small></a></div>
             <div class="col-xs-2 th text-center">
                 <a href="list.php?sortby=lastdonated">Last Date of Donation<small><span class="glyphicon glyphicon-eject"></span></small></a></div>
             <div class="col-xs-2 th text-center">Medical History</div>
