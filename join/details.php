@@ -159,7 +159,7 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-4" for="age">Age:</label>
+            <label class="control-label col-sm-4" for="age">Age:<br><small class="text-muted">(Month - Year)</small></label>
             <div class="col-sm-4">
                 <input type="number" class="form-control" id="b_month" name="b_month" placeholder="Enter Birth Month" name="b_month" min="1" max="12" value="<?php echo $row['b_month'];?>" requireda>
             </div>
